@@ -1,85 +1,89 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('初始多表格')" />
+    <th:block th:include="include :: header('初始多表格')"/>
 </head>
 <body class="gray-bg">
-    <div class="container-div">
-        <div class="row">
-            <div class="col-sm-12 search-collapse">
-                <form id="form1">
-                    <div class="select-list">
-                        <ul>
-						    <li>
-								用户名称：<input type="text" name="userName"/>
-							</li>
-							<li>
-								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search('form1', 'bootstrap-table1')"><i class="fa fa-search"></i>&nbsp;搜索</a>
-							    <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset('form1', 'bootstrap-table1')"><i class="fa fa-refresh"></i>&nbsp;重置</a>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-            <div class="btn-group-sm" id="toolbar1" role="group">
-                <a class="btn btn-success" onclick="options1()">
-	                <i class="fa fa-search"></i> options
-	            </a>
-	            <a class="btn btn-success" onclick="$.operate.add()">
-	                <i class="fa fa-plus"></i> 新增
-	            </a>
-	            <a class="btn btn-primary single disabled" onclick="$.operate.edit()">
-	                <i class="fa fa-edit"></i> 修改
-	            </a>
-	            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
-	                <i class="fa fa-remove"></i> 删除
-	            </a>
-            </div>
-			<div class="col-xs-12 select-table table-striped">
-				<table id="bootstrap-table1"></table>
-			</div>
-		</div>
-	</div>
-	
-	<div class="container-div">
-        <div class="row">
-            <div class="col-sm-12 search-collapse">
-                <form id="form2">
-                    <div class="select-list">
-                        <ul>
-                            <li>
-								用户名称：<input type="text" name="userName"/>
-							</li>
-							<li>
-								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search('form2', 'bootstrap-table2')"><i class="fa fa-search"></i>&nbsp;搜索</a>
-							    <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset('form2', 'bootstrap-table2')"><i class="fa fa-refresh"></i>&nbsp;重置</a>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-			
-            <div class="btn-group-sm" id="toolbar2" role="group">
-                <a class="btn btn-success" onclick="options2()">
-	                <i class="fa fa-search"></i> options
-	            </a>
-	            <a class="btn btn-success" onclick="$.operate.add()">
-	                <i class="fa fa-plus"></i> 新增
-	            </a>
-	            <a class="btn btn-primary single disabled" onclick="$.operate.edit()">
-	                <i class="fa fa-edit"></i> 修改
-	            </a>
-	            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
-	                <i class="fa fa-remove"></i> 删除
-	            </a>
-            </div>
-			<div class="col-xs-12 select-table table-striped">
-				<table id="bootstrap-table2"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="form1">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            用户名称：<input type="text" name="userName"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm"
+                               onclick="$.table.search('form1', 'bootstrap-table1')"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm"
+                               onclick="$.form.reset('form1', 'bootstrap-table1')"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="btn-group-sm" id="toolbar1" role="group">
+            <a class="btn btn-success" onclick="options1()">
+                <i class="fa fa-search"></i> options
+            </a>
+            <a class="btn btn-success" onclick="$.operate.add()">
+                <i class="fa fa-plus"></i> 新增
+            </a>
+            <a class="btn btn-primary single disabled" onclick="$.operate.edit()">
+                <i class="fa fa-edit"></i> 修改
+            </a>
+            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
+                <i class="fa fa-remove"></i> 删除
+            </a>
+        </div>
+        <div class="col-xs-12 select-table table-striped">
+            <table id="bootstrap-table1"></table>
+        </div>
+    </div>
+</div>
+
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="form2">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            用户名称：<input type="text" name="userName"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm"
+                               onclick="$.table.search('form2', 'bootstrap-table2')"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm"
+                               onclick="$.form.reset('form2', 'bootstrap-table2')"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="btn-group-sm" id="toolbar2" role="group">
+            <a class="btn btn-success" onclick="options2()">
+                <i class="fa fa-search"></i> options
+            </a>
+            <a class="btn btn-success" onclick="$.operate.add()">
+                <i class="fa fa-plus"></i> 新增
+            </a>
+            <a class="btn btn-primary single disabled" onclick="$.operate.edit()">
+                <i class="fa fa-edit"></i> 修改
+            </a>
+            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()">
+                <i class="fa fa-remove"></i> 删除
+            </a>
+        </div>
+        <div class="col-xs-12 select-table table-striped">
+            <table id="bootstrap-table2"></table>
+        </div>
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/operate";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -219,6 +223,7 @@
         	}
         	$.modal.alert(temp);
         }
-    </script>
+
+</script>
 </body>
 </html>

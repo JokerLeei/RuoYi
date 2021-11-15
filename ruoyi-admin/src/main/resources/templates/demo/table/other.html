@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('其他操作')" />
+    <th:block th:include="include :: header('其他操作')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-     	<div class="btn-group-sm" id="toolbar" role="group">
-	        <a class="btn btn-success" onclick="$.table.showColumn('userName')">
-	            <i class="fa fa-check"></i> 显示姓名
-	        </a>
-	        <a class="btn btn-danger" onclick="$.table.hideColumn('userName')">
-	            <i class="fa fa-close"></i> 隐藏姓名
-	        </a>
-	        <a class="btn btn-info" onclick="selectColumns()">
-	            <i class="fa fa-search"></i> 获取选中姓名
-	        </a>
-	        <a class="btn btn-warning" onclick="$.table.refresh()">
-	            <i class="fa fa-refresh"></i> 刷新
-	        </a>
-	        <a class="btn btn-danger" onclick="$.table.destroy()">
-	            <i class="fa fa-refresh"></i> 销毁
-	        </a>
-	        <a class="btn btn-primary" onclick="selectFirstColumns()">
-	            <i class="fa fa-search"></i> 获取选中首列值
-	        </a>
+<div class="container-div">
+    <div class="btn-group-sm" id="toolbar" role="group">
+        <a class="btn btn-success" onclick="$.table.showColumn('userName')">
+            <i class="fa fa-check"></i> 显示姓名
+        </a>
+        <a class="btn btn-danger" onclick="$.table.hideColumn('userName')">
+            <i class="fa fa-close"></i> 隐藏姓名
+        </a>
+        <a class="btn btn-info" onclick="selectColumns()">
+            <i class="fa fa-search"></i> 获取选中姓名
+        </a>
+        <a class="btn btn-warning" onclick="$.table.refresh()">
+            <i class="fa fa-refresh"></i> 刷新
+        </a>
+        <a class="btn btn-danger" onclick="$.table.destroy()">
+            <i class="fa fa-refresh"></i> 销毁
+        </a>
+        <a class="btn btn-primary" onclick="selectFirstColumns()">
+            <i class="fa fa-search"></i> 获取选中首列值
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
         </div>
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -101,6 +101,7 @@
         	var column = $.table.selectFirstColumns();
         	alert(column);
         }
-    </script>
+
+</script>
 </body>
 </html>

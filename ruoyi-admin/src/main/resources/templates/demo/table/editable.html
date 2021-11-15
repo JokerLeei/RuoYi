@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('表格行内编辑')" />
-	<th:block th:include="include :: bootstrap-editable-css" />
+    <th:block th:include="include :: header('表格行内编辑')"/>
+    <th:block th:include="include :: bootstrap-editable-css"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-        <div class="btn-group-sm" id="toolbar" role="group">
-             <a class="btn btn-info" onclick="getSelections()">
-	            <i class="fa fa-search"></i> 查询选择数据
-	        </a>
-	        <a class="btn btn-primary" onclick="getData()">
-	            <i class="fa fa-search"></i> 获取所有数据
-	        </a>
+<div class="container-div">
+    <div class="btn-group-sm" id="toolbar" role="group">
+        <a class="btn btn-info" onclick="getSelections()">
+            <i class="fa fa-search"></i> 查询选择数据
+        </a>
+        <a class="btn btn-primary" onclick="getData()">
+            <i class="fa fa-search"></i> 获取所有数据
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
         </div>
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-	
-	<th:block th:include="include :: footer" />
-	<th:block th:include="include :: bootstrap-table-editable-js" />
-	
-    <script th:inline="javascript">
+    </div>
+</div>
+
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: bootstrap-table-editable-js"/>
+
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -123,6 +123,7 @@
         	var data = $("#" + table.options.id).bootstrapTable('getSelections');
         	alert(JSON.stringify(data))
         }
-    </script>
+
+</script>
 </body>
 </html>

@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:include="include :: header('修改用户密码')" />
+    <th:block th:include="include :: header('修改用户密码')"/>
 </head>
 <body class="white-bg">
-    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
-        <form class="form-horizontal m" id="form-user-resetPwd">
-            <input name="userId"  type="hidden"  th:value="${user.userId}" />
-            <div class="form-group">
-                <label class="col-sm-3 control-label">登录名称：</label>
-                <div class="col-sm-8">
-                    <input class="form-control" type="text" readonly="true" name="loginName" th:value="${user.loginName}"/>
-                </div>
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-user-resetPwd">
+        <input name="userId" type="hidden" th:value="${user.userId}"/>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">登录名称：</label>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" readonly="true" name="loginName" th:value="${user.loginName}"/>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">旧密码：</label>
-                <div class="col-sm-8">
-                    <input class="form-control" type="password" name="oldPassword" id="oldPassword">
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">旧密码：</label>
+            <div class="col-sm-8">
+                <input class="form-control" type="password" name="oldPassword" id="oldPassword">
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">新密码：</label>
-                <div class="col-sm-8">
-                    <input class="form-control" type="password" name="newPassword" id="newPassword">
-                    <th:block th:with="chrtype=${@config.getKey('sys.account.chrtype')}"> 
-                        <th:block th:if="${chrtype != '0'}">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">新密码：</label>
+            <div class="col-sm-8">
+                <input class="form-control" type="password" name="newPassword" id="newPassword">
+                <th:block th:with="chrtype=${@config.getKey('sys.account.chrtype')}">
+                    <th:block th:if="${chrtype != '0'}">
                             <span class="help-block m-b-none">
-                                <th:block th:if="${chrtype == '1'}"><i class="fa fa-info-circle" style="color: red;"></i>  密码只能为0-9数字 </th:block>
-                                <th:block th:if="${chrtype == '2'}"><i class="fa fa-info-circle" style="color: red;"></i>  密码只能为a-z和A-Z字母</th:block>
-                                <th:block th:if="${chrtype == '3'}"><i class="fa fa-info-circle" style="color: red;"></i>  密码必须包含（字母，数字）</th:block>
-                                <th:block th:if="${chrtype == '4'}"><i class="fa fa-info-circle" style="color: red;"></i>  密码必须包含（字母，数字，特殊字符!@#$%^&*()-=_+）</th:block>
+                                <th:block th:if="${chrtype == '1'}"><i class="fa fa-info-circle"
+                                                                       style="color: red;"></i>  密码只能为0-9数字 </th:block>
+                                <th:block th:if="${chrtype == '2'}"><i class="fa fa-info-circle"
+                                                                       style="color: red;"></i>  密码只能为a-z和A-Z字母</th:block>
+                                <th:block th:if="${chrtype == '3'}"><i class="fa fa-info-circle"
+                                                                       style="color: red;"></i>  密码必须包含（字母，数字）</th:block>
+                                <th:block th:if="${chrtype == '4'}"><i class="fa fa-info-circle"
+                                                                       style="color: red;"></i>  密码必须包含（字母，数字，特殊字符!@#$%^&*()-=_+）</th:block>
                             </span>
-                        </th:block>
                     </th:block>
-                </div>
+                </th:block>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">再次确认：</label>
-                <div class="col-sm-8">
-                    <input class="form-control" type="password" name="confirmPassword" id="confirmPassword">
-                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请再次输入您的密码</span>
-                </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">再次确认：</label>
+            <div class="col-sm-8">
+                <input class="form-control" type="password" name="confirmPassword" id="confirmPassword">
+                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请再次输入您的密码</span>
             </div>
-        </form>
-    </div>
-    <th:block th:include="include :: footer" />
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer"/>
 
-    <script>
+<script>
         $("#form-user-resetPwd").validate({
             rules:{
                 oldPassword:{
@@ -98,7 +102,8 @@
                 $.operate.save(ctx + "system/user/profile/resetPwd", $('#form-user-resetPwd').serialize());
             }
         }
-    </script>
+
+</script>
 </body>
 
 </html>

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('自定义触发事件')" />
+    <th:block th:include="include :: header('自定义触发事件')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-			    <p class="select-title">自定义触发事件（点击某行/双击某行/单击某格/双击某格/服务器发送数据前触发/数据被加载时触发）</p>
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <p class="select-title">自定义触发事件（点击某行/双击某行/单击某格/双击某格/服务器发送数据前触发/数据被加载时触发）</p>
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -128,6 +128,7 @@
         function onLoadSuccess(data){
         	alert("当所有数据被加载时触发");
         }
-    </script>
+
+</script>
 </body>
 </html>

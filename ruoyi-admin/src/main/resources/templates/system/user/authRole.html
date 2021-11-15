@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('用户分配角色')" />
+    <th:block th:include="include :: header('用户分配角色')"/>
 </head>
 <body>
-    <div class="main-content">
-        <form id="form-user-add" class="form-horizontal">
-            <input type="hidden" id="userId" name="userId" th:value="${user.userId}">
-            <h4 class="form-header h4">基本信息</h4>
-            <div class="row">
-            	<div class="col-sm-6">
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label is-required">用户名称：</label>
-                        <div class="col-sm-8">
-                            <input name="userName" class="form-control" type="text" disabled th:value="${user.userName}">
-                        </div>
+<div class="main-content">
+    <form id="form-user-add" class="form-horizontal">
+        <input type="hidden" id="userId" name="userId" th:value="${user.userId}">
+        <h4 class="form-header h4">基本信息</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label is-required">用户名称：</label>
+                    <div class="col-sm-8">
+                        <input name="userName" class="form-control" type="text" disabled th:value="${user.userName}">
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label is-required">登录账号：</label>
-                        <div class="col-sm-8">
-                            <input name="loginName" class="form-control" type="text" disabled th:value="${user.loginName}">
-                        </div>
-                    </div>
-                </div> 
             </div>
-           
-            <h4 class="form-header h4">分配角色</h4>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-sm-12 select-table table-striped">
-					    <table id="bootstrap-table"></table>
-					</div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label is-required">登录账号：</label>
+                    <div class="col-sm-8">
+                        <input name="loginName" class="form-control" type="text" disabled th:value="${user.loginName}">
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
-      
-    <div class="row">
-        <div class="col-sm-offset-5 col-sm-10">
-            <button type="button" class="btn btn-sm btn-primary" onclick="submitHandler()"><i class="fa fa-check"></i>保 存</button>&nbsp;
-            <button type="button" class="btn btn-sm btn-danger" onclick="closeItem()"><i class="fa fa-reply-all"></i>关 闭 </button>
         </div>
+
+        <h4 class="form-header h4">分配角色</h4>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-12 select-table table-striped">
+                    <table id="bootstrap-table"></table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-sm-offset-5 col-sm-10">
+        <button type="button" class="btn btn-sm btn-primary" onclick="submitHandler()"><i class="fa fa-check"></i>保 存
+        </button>&nbsp;
+        <button type="button" class="btn btn-sm btn-danger" onclick="closeItem()"><i class="fa fa-reply-all"></i>关 闭
+        </button>
     </div>
-	<th:block th:include="include :: footer" />
-	<script th:inline="javascript">
+</div>
+<th:block th:include="include :: footer"/>
+<script th:inline="javascript">
 	    var prefix = ctx + "system/user/authRole";
 	    var roles = [[${roles}]]
 	    
@@ -104,6 +106,7 @@
         	var data = { "userId": $("#userId").val(), "roleIds": rows.join() };
 			$.operate.saveTab(prefix + "/insertAuthRole", data);
         }
-    </script>
+
+</script>
 </body>
 </html>

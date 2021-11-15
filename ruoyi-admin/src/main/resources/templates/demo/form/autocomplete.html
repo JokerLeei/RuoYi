@@ -1,161 +1,169 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<th:block th:include="include :: header('搜索自动补全')" />
+    <th:block th:include="include :: header('搜索自动补全')"/>
 </head>
 <body class="gray-bg">
-      <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>搜索自动补全<small>https://github.com/lzwme/bootstrap-suggest-plugin</small></h5>
-                    </div>  
-                    <div class="ibox-content">
-                        <p>展示下拉菜单按钮。</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="suggest-demo-1">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                        </ul>
-                                    </div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索自动补全<small>https://github.com/lzwme/bootstrap-suggest-plugin</small></h5>
+                </div>
+                <div class="ibox-content">
+                    <p>展示下拉菜单按钮。</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="suggest-demo-1">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px"
+                                            data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        
-                        <p>不展示下拉菜单按钮。</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="suggest-demo-2">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                        </ul>
-                                    </div>
+                    </div>
+
+                    <p>不展示下拉菜单按钮。</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="suggest-demo-2">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        
-                        <p>前端json中获取数据</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="suggest-demo-3">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                        </ul>
-                                    </div>
-                                    <!-- /btn-group -->
+                    </div>
+
+                    <p>前端json中获取数据</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="suggest-demo-3">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px"
+                                            data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
                                 </div>
+                                <!-- /btn-group -->
                             </div>
                         </div>
-                        
-                        <h3>百度搜索</h3>
-                        <p>支持逗号分隔多关键字</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-group" style="width: 300px;">
-                                    <input type="text" class="form-control" id="baidu">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                        </ul>
-                                    </div>
-                                    <!-- /btn-group -->
+                    </div>
+
+                    <h3>百度搜索</h3>
+                    <p>支持逗号分隔多关键字</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group" style="width: 300px;">
+                                <input type="text" class="form-control" id="baidu">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px"
+                                            data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
                                 </div>
+                                <!-- /btn-group -->
                             </div>
                         </div>
-                        
-                        <h3>淘宝搜索</h3>
-                        <p>支持逗号分隔多关键字</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-group" style="width: 400px;">
-                                    <input type="text" class="form-control" id="taobao">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                        </ul>
-                                    </div>
-                                    <!-- /btn-group -->
+                    </div>
+
+                    <h3>淘宝搜索</h3>
+                    <p>支持逗号分隔多关键字</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group" style="width: 400px;">
+                                <input type="text" class="form-control" id="taobao">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" style="height: 31px"
+                                            data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
                                 </div>
+                                <!-- /btn-group -->
                             </div>
                         </div>
-                        <hr>
-                        <div class="form-group">
-                            <label class="font-noraml">相关参数详细信息</label>
-                            <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-suggest" target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-suggest</a></div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="font-noraml">相关参数详细信息</label>
+                        <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-suggest" target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-suggest</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>搜索自动补全<small>https://github.com/bassjobsen/Bootstrap-3-Typeahead</small></h5>
-                    </div>  
-                    <div class="ibox-content">
-                        <p>通过数据属性的基本示例。</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                           	    <input type="text" placeholder="ruoyi..." data-provide="typeahead" data-source='["ruoyi 1","ruoyi 2","ruoyi 3"]' class="form-control" />
-                            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索自动补全<small>https://github.com/bassjobsen/Bootstrap-3-Typeahead</small></h5>
+                </div>
+                <div class="ibox-content">
+                    <p>通过数据属性的基本示例。</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="ruoyi..." data-provide="typeahead"
+                                   data-source='["ruoyi 1","ruoyi 2","ruoyi 3"]' class="form-control"/>
                         </div>
-                        <hr>
-                        
-                        <p>通过javascript的基本示例。</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-1"/>
-                            </div>
+                    </div>
+                    <hr>
+
+                    <p>通过javascript的基本示例。</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-1"/>
                         </div>
-                        
-                        <hr>
-                        <p>通过javascript的复杂示例。</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-2"/>
-                            </div>
+                    </div>
+
+                    <hr>
+                    <p>通过javascript的复杂示例。</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-2"/>
                         </div>
-                        
-                        <hr>
-                        <p>后台url中获取简单数据</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-3"/>
-                            </div>
+                    </div>
+
+                    <hr>
+                    <p>后台url中获取简单数据</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="ruoyi..." class="form-control" id="typeahead-demo-3"/>
                         </div>
-                        
-                        <hr>
-                        <div class="form-group">
-                            <label class="font-noraml">相关参数详细信息</label>
-                            <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-typeahead" target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-typeahead</a></div>
+                    </div>
+
+                    <hr>
+                    <div class="form-group">
+                        <label class="font-noraml">相关参数详细信息</label>
+                        <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-typeahead"
+                                target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#bootstrap-typeahead</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <th:block th:include="include :: footer" />
-    <th:block th:include="include :: bootstrap-suggest-js" />
-    <th:block th:include="include :: bootstrap-typeahead-js" />
-    <script type="text/javascript">
+</div>
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: bootstrap-suggest-js"/>
+<th:block th:include="include :: bootstrap-typeahead-js"/>
+<script type="text/javascript">
         
 	    var testBsSuggest = $("#suggest-demo-1").bsSuggest({
 	        url: ctx + "demo/form/userModel",
@@ -318,6 +326,7 @@
 		        source: data.value
 		    });
         },'json');
-    </script>
+
+</script>
 </body>
 </html>

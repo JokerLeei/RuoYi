@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('翻页记住选择')" />
+    <th:block th:include="include :: header('翻页记住选择')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-     	<div class="btn-group-sm" id="toolbar" role="group">
-	        <a class="btn btn-success" onclick="checkItem()">
-	            <i class="fa fa-check"></i> 选中项
-	        </a>
+<div class="container-div">
+    <div class="btn-group-sm" id="toolbar" role="group">
+        <a class="btn btn-success" onclick="checkItem()">
+            <i class="fa fa-check"></i> 选中项
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
         </div>
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -81,6 +81,7 @@
         	var arrays = $.table.selectColumns("userCode");
         	alert(arrays);
         }
-    </script>
+
+</script>
 </body>
 </html>

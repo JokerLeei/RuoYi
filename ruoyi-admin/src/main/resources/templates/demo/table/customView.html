@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('自定义视图分页')" />
+    <th:block th:include="include :: header('自定义视图分页')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table" data-page-size="10" 
-				       data-show-custom-view="true" data-custom-view="customViewFormatter"
-                       data-show-custom-view-button="true">
-                </table>
-			</div>
-		</div>
-	</div>
-	
-    <template id="profileTemplate">
-        <div class="col-sm-4">
-            <div class="contact-box">
-                <a href="profile.html">
-                    <div class="col-sm-4">
-                        <div class="text-center">
-                            <img alt="image" class="img-circle m-t-xs img-responsive" src="%IMAGE%">
-                            <div class="m-t-xs font-bold">%userName%</div>
-                        </div>
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table" data-page-size="10"
+                   data-show-custom-view="true" data-custom-view="customViewFormatter"
+                   data-show-custom-view-button="true">
+            </table>
+        </div>
+    </div>
+</div>
+
+<template id="profileTemplate">
+    <div class="col-sm-4">
+        <div class="contact-box">
+            <a href="profile.html">
+                <div class="col-sm-4">
+                    <div class="text-center">
+                        <img alt="image" class="img-circle m-t-xs img-responsive" src="%IMAGE%">
+                        <div class="m-t-xs font-bold">%userName%</div>
                     </div>
-                    <div class="col-sm-8">
-                        <h3><strong>%userCode%</strong></h3>
-                        <p><i class="fa fa-jpy"></i> %userBalance%</p>
-                        <address>
+                </div>
+                <div class="col-sm-8">
+                    <h3><strong>%userCode%</strong></h3>
+                    <p><i class="fa fa-jpy"></i> %userBalance%</p>
+                    <address>
                         <strong>RuoYi, Inc.</strong><br>
                         E-mail: %userEmail%<br>
                         <abbr title="Phone">Tel:</abbr> %userPhone%
-                       </address>
-                    </div>
-                    <div class="clearfix"></div>
-                 </a>
-             </div>
+                    </address>
+                </div>
+                <div class="clearfix"></div>
+            </a>
         </div>
-    </template>
+    </div>
+</template>
 
-    <div th:include="include :: footer"></div>
-    <th:block th:include="include :: bootstrap-table-custom-view-js" />
-    <script th:inline="javascript">
+<div th:include="include :: footer"></div>
+<th:block th:include="include :: bootstrap-table-custom-view-js"/>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -117,6 +117,7 @@
 
             return `<div class="row mx-0">${view}</div>`
           }
-    </script>
+
+</script>
 </body>
 </html>

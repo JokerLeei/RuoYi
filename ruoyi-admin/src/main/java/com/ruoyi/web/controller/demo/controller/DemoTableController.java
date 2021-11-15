@@ -1,16 +1,5 @@
 package com.ruoyi.web.controller.demo.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.annotation.Excel.ColumnType;
@@ -23,19 +12,27 @@ import com.ruoyi.common.core.text.Convert;
 import com.ruoyi.common.utils.DateUtils;
 import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.poi.ExcelUtil;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.*;
 
 /**
  * 表格相关
- * 
+ *
  * @author ruoyi
  */
 @Controller
 @RequestMapping("/demo/table")
-public class DemoTableController extends BaseController
-{
-    private String prefix = "demo/table";
+public class DemoTableController extends BaseController {
+    private String prefix = "demo/table" ;
 
     private final static List<UserTableModel> users = new ArrayList<UserTableModel>();
+
     {
         users.add(new UserTableModel(1, "1000001", "测试1", "0", "15888888888", "ry@qq.com", 150.0, "0"));
         users.add(new UserTableModel(2, "1000002", "测试2", "1", "15666666666", "ry@qq.com", 180.0, "1"));
@@ -66,6 +63,7 @@ public class DemoTableController extends BaseController
     }
 
     private final static List<UserTableColumn> columns = new ArrayList<UserTableColumn>();
+
     {
         columns.add(new UserTableColumn("用户ID", "userId"));
         columns.add(new UserTableColumn("用户编号", "userCode"));
@@ -79,45 +77,40 @@ public class DemoTableController extends BaseController
      * 搜索相关
      */
     @GetMapping("/search")
-    public String search()
-    {
-        return prefix + "/search";
+    public String search() {
+        return prefix + "/search" ;
     }
 
     /**
      * 数据汇总
      */
     @GetMapping("/footer")
-    public String footer()
-    {
-        return prefix + "/footer";
+    public String footer() {
+        return prefix + "/footer" ;
     }
 
     /**
      * 组合表头
      */
     @GetMapping("/groupHeader")
-    public String groupHeader()
-    {
-        return prefix + "/groupHeader";
+    public String groupHeader() {
+        return prefix + "/groupHeader" ;
     }
 
     /**
      * 表格导出
      */
     @GetMapping("/export")
-    public String export()
-    {
-        return prefix + "/export";
+    public String export() {
+        return prefix + "/export" ;
     }
 
     /**
      * 表格导出选择列
      */
     @GetMapping("/exportSelected")
-    public String exportSelected()
-    {
-        return prefix + "/exportSelected";
+    public String exportSelected() {
+        return prefix + "/exportSelected" ;
     }
 
     /**
@@ -125,21 +118,16 @@ public class DemoTableController extends BaseController
      */
     @PostMapping("/exportData")
     @ResponseBody
-    public AjaxResult exportSelected(UserTableModel userModel, String userIds)
-    {
+    public AjaxResult exportSelected(UserTableModel userModel, String userIds) {
         List<UserTableModel> userList = new ArrayList<UserTableModel>(Arrays.asList(new UserTableModel[users.size()]));
         Collections.copy(userList, users);
 
         // 条件过滤
-        if (StringUtils.isNotEmpty(userIds))
-        {
+        if (StringUtils.isNotEmpty(userIds)) {
             userList.clear();
-            for (Long userId : Convert.toLongArray(userIds))
-            {
-                for (UserTableModel user : users)
-                {
-                    if (user.getUserId() == userId)
-                    {
+            for (Long userId : Convert.toLongArray(userIds)) {
+                for (UserTableModel user : users) {
+                    if (user.getUserId() == userId) {
                         userList.add(user);
                     }
                 }
@@ -153,208 +141,185 @@ public class DemoTableController extends BaseController
      * 翻页记住选择
      */
     @GetMapping("/remember")
-    public String remember()
-    {
-        return prefix + "/remember";
+    public String remember() {
+        return prefix + "/remember" ;
     }
 
     /**
      * 跳转至指定页
      */
     @GetMapping("/pageGo")
-    public String pageGo()
-    {
-        return prefix + "/pageGo";
+    public String pageGo() {
+        return prefix + "/pageGo" ;
     }
 
     /**
      * 自定义查询参数
      */
     @GetMapping("/params")
-    public String params()
-    {
-        return prefix + "/params";
+    public String params() {
+        return prefix + "/params" ;
     }
 
     /**
      * 多表格
      */
     @GetMapping("/multi")
-    public String multi()
-    {
-        return prefix + "/multi";
+    public String multi() {
+        return prefix + "/multi" ;
     }
 
     /**
      * 点击按钮加载表格
      */
     @GetMapping("/button")
-    public String button()
-    {
-        return prefix + "/button";
+    public String button() {
+        return prefix + "/button" ;
     }
 
     /**
      * 直接加载表格数据
      */
     @GetMapping("/data")
-    public String data(ModelMap mmap)
-    {
+    public String data(ModelMap mmap) {
         mmap.put("users", users);
-        return prefix + "/data";
+        return prefix + "/data" ;
     }
 
     /**
      * 表格冻结列
      */
     @GetMapping("/fixedColumns")
-    public String fixedColumns()
-    {
-        return prefix + "/fixedColumns";
+    public String fixedColumns() {
+        return prefix + "/fixedColumns" ;
     }
 
     /**
      * 自定义触发事件
      */
     @GetMapping("/event")
-    public String event()
-    {
-        return prefix + "/event";
+    public String event() {
+        return prefix + "/event" ;
     }
 
     /**
      * 表格细节视图
      */
     @GetMapping("/detail")
-    public String detail()
-    {
-        return prefix + "/detail";
+    public String detail() {
+        return prefix + "/detail" ;
     }
 
     /**
      * 表格父子视图
      */
     @GetMapping("/child")
-    public String child()
-    {
-        return prefix + "/child";
+    public String child() {
+        return prefix + "/child" ;
     }
 
     /**
      * 表格图片预览
      */
     @GetMapping("/image")
-    public String image()
-    {
-        return prefix + "/image";
+    public String image() {
+        return prefix + "/image" ;
     }
 
     /**
      * 动态增删改查
      */
     @GetMapping("/curd")
-    public String curd()
-    {
-        return prefix + "/curd";
+    public String curd() {
+        return prefix + "/curd" ;
     }
 
     /**
      * 表格行拖拽操作
      */
     @GetMapping("/reorderRows")
-    public String reorderRows()
-    {
-        return prefix + "/reorderRows";
+    public String reorderRows() {
+        return prefix + "/reorderRows" ;
     }
 
     /**
      * 表格列拖拽操作
      */
     @GetMapping("/reorderColumns")
-    public String reorderColumns()
-    {
-        return prefix + "/reorderColumns";
+    public String reorderColumns() {
+        return prefix + "/reorderColumns" ;
     }
 
     /**
      * 表格列宽拖动
      */
     @GetMapping("/resizable")
-    public String resizable()
-    {
-        return prefix + "/resizable";
+    public String resizable() {
+        return prefix + "/resizable" ;
     }
 
     /**
      * 表格行内编辑操作
      */
     @GetMapping("/editable")
-    public String editable()
-    {
-        return prefix + "/editable";
+    public String editable() {
+        return prefix + "/editable" ;
     }
 
     /**
      * 主子表提交
      */
     @GetMapping("/subdata")
-    public String subdata()
-    {
-        return prefix + "/subdata";
+    public String subdata() {
+        return prefix + "/subdata" ;
     }
 
     /**
      * 表格自动刷新
      */
     @GetMapping("/refresh")
-    public String refresh()
-    {
-        return prefix + "/refresh";
+    public String refresh() {
+        return prefix + "/refresh" ;
     }
 
     /**
      * 表格打印配置
      */
     @GetMapping("/print")
-    public String print()
-    {
-        return prefix + "/print";
+    public String print() {
+        return prefix + "/print" ;
     }
 
     /**
      * 表格标题格式化
      */
     @GetMapping("/headerStyle")
-    public String headerStyle()
-    {
-        return prefix + "/headerStyle";
+    public String headerStyle() {
+        return prefix + "/headerStyle" ;
     }
 
     /**
      * 表格动态列
      */
     @GetMapping("/dynamicColumns")
-    public String dynamicColumns()
-    {
-        return prefix + "/dynamicColumns";
+    public String dynamicColumns() {
+        return prefix + "/dynamicColumns" ;
     }
 
     /**
      * 自定义视图分页
      */
     @GetMapping("/customView")
-    public String customView()
-    {
-        return prefix + "/customView";
+    public String customView() {
+        return prefix + "/customView" ;
     }
 
     /**
      * 表格其他操作
      */
     @GetMapping("/other")
-    public String other()
-    {
-        return prefix + "/other";
+    public String other() {
+        return prefix + "/other" ;
     }
 
     /**
@@ -362,12 +327,10 @@ public class DemoTableController extends BaseController
      */
     @PostMapping("/ajaxColumns")
     @ResponseBody
-    public AjaxResult ajaxColumns(UserTableColumn userColumn)
-    {
+    public AjaxResult ajaxColumns(UserTableColumn userColumn) {
         List<UserTableColumn> columnList = new ArrayList<UserTableColumn>(Arrays.asList(new UserTableColumn[columns.size()]));
         Collections.copy(columnList, columns);
-        if (userColumn != null && "userBalance".equals(userColumn.getField()))
-        {
+        if (userColumn != null && "userBalance".equals(userColumn.getField())) {
             columnList.add(new UserTableColumn("用户余额", "userBalance"));
         }
         return AjaxResult.success(columnList);
@@ -378,34 +341,28 @@ public class DemoTableController extends BaseController
      */
     @PostMapping("/list")
     @ResponseBody
-    public TableDataInfo list(UserTableModel userModel)
-    {
+    public TableDataInfo list(UserTableModel userModel) {
         TableDataInfo rspData = new TableDataInfo();
         List<UserTableModel> userList = new ArrayList<UserTableModel>(Arrays.asList(new UserTableModel[users.size()]));
         Collections.copy(userList, users);
         // 查询条件过滤
-        if (StringUtils.isNotEmpty(userModel.getUserName()))
-        {
+        if (StringUtils.isNotEmpty(userModel.getUserName())) {
             userList.clear();
-            for (UserTableModel user : users)
-            {
-                if (user.getUserName().equals(userModel.getUserName()))
-                {
+            for (UserTableModel user : users) {
+                if (user.getUserName().equals(userModel.getUserName())) {
                     userList.add(user);
                 }
             }
         }
         PageDomain pageDomain = TableSupport.buildPageRequest();
-        if (null == pageDomain.getPageNum() || null == pageDomain.getPageSize())
-        {
+        if (null == pageDomain.getPageNum() || null == pageDomain.getPageSize()) {
             rspData.setRows(userList);
             rspData.setTotal(userList.size());
             return rspData;
         }
         Integer pageNum = (pageDomain.getPageNum() - 1) * 10;
         Integer pageSize = pageDomain.getPageNum() * 10;
-        if (pageSize > userList.size())
-        {
+        if (pageSize > userList.size()) {
             pageSize = userList.size();
         }
         rspData.setRows(userList.subList(pageNum, pageSize));
@@ -414,88 +371,100 @@ public class DemoTableController extends BaseController
     }
 }
 
-class UserTableColumn
-{
-    /** 表头 */
+class UserTableColumn {
+    /**
+     * 表头
+     */
     private String title;
-    /** 字段 */
+    /**
+     * 字段
+     */
     private String field;
 
-    public UserTableColumn()
-    {
+    public UserTableColumn() {
 
     }
 
-    public UserTableColumn(String title, String field)
-    {
+    public UserTableColumn(String title, String field) {
         this.title = title;
         this.field = field;
     }
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title)
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getField()
-    {
+    public String getField() {
         return field;
     }
 
-    public void setField(String field)
-    {
+    public void setField(String field) {
         this.field = field;
     }
 }
 
-class UserTableModel
-{
-    /** 用户ID */
+class UserTableModel {
+    /**
+     * 用户ID
+     */
     private int userId;
 
-    /** 用户编号 */
+    /**
+     * 用户编号
+     */
     @Excel(name = "用户编号", cellType = ColumnType.NUMERIC)
     private String userCode;
 
-    /** 用户姓名 */
+    /**
+     * 用户姓名
+     */
     @Excel(name = "用户姓名")
     private String userName;
 
-    /** 用户性别 */
+    /**
+     * 用户性别
+     */
     private String userSex;
 
-    /** 用户手机 */
+    /**
+     * 用户手机
+     */
     @Excel(name = "用户手机")
     private String userPhone;
 
-    /** 用户邮箱 */
+    /**
+     * 用户邮箱
+     */
     @Excel(name = "用户邮箱")
     private String userEmail;
 
-    /** 用户余额 */
+    /**
+     * 用户余额
+     */
     @Excel(name = "用户余额", cellType = ColumnType.NUMERIC)
     private double userBalance;
 
-    /** 用户状态（0正常 1停用） */
+    /**
+     * 用户状态（0正常 1停用）
+     */
     private String status;
 
-    /** 创建时间 */
+    /**
+     * 创建时间
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
-    public UserTableModel()
-    {
+    public UserTableModel() {
 
     }
 
     public UserTableModel(int userId, String userCode, String userName, String userSex, String userPhone,
-            String userEmail, double userBalance, String status)
-    {
+                          String userEmail, double userBalance, String status) {
         this.userId = userId;
         this.userCode = userCode;
         this.userName = userName;
@@ -507,93 +476,75 @@ class UserTableModel
         this.createTime = DateUtils.getNowDate();
     }
 
-    public int getUserId()
-    {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId)
-    {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
-    public String getUserCode()
-    {
+    public String getUserCode() {
         return userCode;
     }
 
-    public void setUserCode(String userCode)
-    {
+    public void setUserCode(String userCode) {
         this.userCode = userCode;
     }
 
-    public String getUserName()
-    {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName)
-    {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getUserSex()
-    {
+    public String getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(String userSex)
-    {
+    public void setUserSex(String userSex) {
         this.userSex = userSex;
     }
 
-    public String getUserPhone()
-    {
+    public String getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(String userPhone)
-    {
+    public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
 
-    public String getUserEmail()
-    {
+    public String getUserEmail() {
         return userEmail;
     }
 
-    public void setUserEmail(String userEmail)
-    {
+    public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
 
-    public double getUserBalance()
-    {
+    public double getUserBalance() {
         return userBalance;
     }
 
-    public void setUserBalance(double userBalance)
-    {
+    public void setUserBalance(double userBalance) {
         this.userBalance = userBalance;
     }
 
-    public String getStatus()
-    {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status)
-    {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Date getCreateTime()
-    {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime)
-    {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 }

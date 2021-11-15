@@ -1,86 +1,87 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<th:block th:include="include :: header('多级联动下拉')" />
+    <th:block th:include="include :: header('多级联动下拉')"/>
 </head>
 <body class="gray-bg">
-      <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>多级联动下拉<small>https://github.com/ciaoca/cxSelect</small></h5>
-                    </div>  
-                    <div class="ibox-content">
-                        <p>简单联动示例。</p>
-                        <div id="element" class="row">
-                            <div class="col-sm-2">
-	                            <select class="type form-control m-b" data-first-title="请选择">
-				                  <option value="">请选择</option>
-				                </select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="router form-control m-b" data-first-title="请选择">
-				                  <option value="">请选择</option>
-				                </select>
-			                </div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>多级联动下拉<small>https://github.com/ciaoca/cxSelect</small></h5>
+                </div>
+                <div class="ibox-content">
+                    <p>简单联动示例。</p>
+                    <div id="element" class="row">
+                        <div class="col-sm-2">
+                            <select class="type form-control m-b" data-first-title="请选择">
+                                <option value="">请选择</option>
+                            </select>
                         </div>
-                        <hr>
-                        
-                        <p>国内省市区联动。</p>
-                        <div id="element1" class="row">
-                            <div class="col-sm-2">
-	                            <select class="province form-control m-b" data-first-title="选择省">
-				                  <option value="">请选择</option>
-				                  <option value="广东省" selected>广东省</option>
-				                </select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="city form-control m-b" data-first-title="选择市">
-				                  <option value="">请选择</option>
-				                  <option value="深圳市" selected>深圳市</option>
-				                </select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="area form-control m-b" data-first-title="选择地区">
-				                  <option value="">请选择</option>
-				                  <option value="南山区" selected>南山区</option>
-				                </select>
-			                </div>
+                        <div class="col-sm-2">
+                            <select class="router form-control m-b" data-first-title="请选择">
+                                <option value="">请选择</option>
+                            </select>
                         </div>
-                        <hr>
-                        
-                        <p>自定义选项。</p>
-                        <div id="element2" class="row">
-                            <div class="col-sm-2">
-	                            <select class="first form-control m-b"></select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="second form-control m-b"></select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="third form-control m-b"></select>
-			                </div>
-			                <div class="col-sm-2">
-				                <select class="fourth form-control m-b"></select>
-			                </div>
-			                <div class="col-sm-2">
-			                    <select class="fifth form-control m-b"></select>
-			                </div>
+                    </div>
+                    <hr>
+
+                    <p>国内省市区联动。</p>
+                    <div id="element1" class="row">
+                        <div class="col-sm-2">
+                            <select class="province form-control m-b" data-first-title="选择省">
+                                <option value="">请选择</option>
+                                <option value="广东省" selected>广东省</option>
+                            </select>
                         </div>
-                        <hr>
-                        <div class="form-group">
-                            <label class="font-noraml">相关参数详细信息</label>
-                            <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#jquery-cxselect" target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#jquery-cxselect</a></div>
+                        <div class="col-sm-2">
+                            <select class="city form-control m-b" data-first-title="选择市">
+                                <option value="">请选择</option>
+                                <option value="深圳市" selected>深圳市</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="area form-control m-b" data-first-title="选择地区">
+                                <option value="">请选择</option>
+                                <option value="南山区" selected>南山区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <p>自定义选项。</p>
+                    <div id="element2" class="row">
+                        <div class="col-sm-2">
+                            <select class="first form-control m-b"></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="second form-control m-b"></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="third form-control m-b"></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="fourth form-control m-b"></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select class="fifth form-control m-b"></select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label class="font-noraml">相关参数详细信息</label>
+                        <div><a href="http://doc.ruoyi.vip/ruoyi/document/zjwd.html#jquery-cxselect" target="_blank">http://doc.ruoyi.vip/ruoyi/document/zjwd.html#jquery-cxselect</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <th:block th:include="include :: footer" />
-    <th:block th:include="include :: jquery-cxselect-js" />
-    <script th:inline="javascript">
+</div>
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: jquery-cxselect-js"/>
+<script th:inline="javascript">
         // 直接返回获取
    		var data = [[${data}]];
     	$('#element').cxSelect({
@@ -156,6 +157,7 @@
    			{'v': '' , 'n': '无子级'}
    		  ]
    		});
-    </script>
+
+</script>
 </body>
 </html>

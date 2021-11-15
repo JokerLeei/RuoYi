@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('动态增删改查')" />
+    <th:block th:include="include :: header('动态增删改查')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-        <div class="btn-group-sm" id="toolbar" role="group">
-	        <a class="btn btn-success" onclick="insertRow()">
-	            <i class="fa fa-plus"></i> 新增行
-	        </a>
-	        <a class="btn btn-danger multiple disabled" onclick="removeRow()">
-	            <i class="fa fa-remove"></i> 删除选择行
-	        </a>
-	        <a class="btn btn-danger" onclick="removeRowByUniqueId()">
-	            <i class="fa fa-remove"></i> 根据值删除行
-	        </a>
-	        <a class="btn btn-danger" onclick="removeRowAll()">
-	            <i class="fa fa-remove"></i> 删除所有行
-	        </a>
-	        <a class="btn btn-info" onclick="updateRow()">
-	            <i class="fa fa-edit"></i> 修改行
-	        </a>
-	        <a class="btn btn-info" onclick="updateRowByUniqueId()">
-	            <i class="fa fa-edit"></i> 根据值修改行
-	        </a>
-	        <a class="btn btn-info" onclick="getSelections()">
-	            <i class="fa fa-search"></i> 查询选择数据
-	        </a>
-	        <a class="btn btn-info" onclick="getRowByUniqueId()">
-	            <i class="fa fa-search"></i> 根据值查询行
-	        </a>
-	        <a class="btn btn-primary" onclick="getData()">
-	            <i class="fa fa-search"></i> 查询所有数据
-	        </a>
+<div class="container-div">
+    <div class="btn-group-sm" id="toolbar" role="group">
+        <a class="btn btn-success" onclick="insertRow()">
+            <i class="fa fa-plus"></i> 新增行
+        </a>
+        <a class="btn btn-danger multiple disabled" onclick="removeRow()">
+            <i class="fa fa-remove"></i> 删除选择行
+        </a>
+        <a class="btn btn-danger" onclick="removeRowByUniqueId()">
+            <i class="fa fa-remove"></i> 根据值删除行
+        </a>
+        <a class="btn btn-danger" onclick="removeRowAll()">
+            <i class="fa fa-remove"></i> 删除所有行
+        </a>
+        <a class="btn btn-info" onclick="updateRow()">
+            <i class="fa fa-edit"></i> 修改行
+        </a>
+        <a class="btn btn-info" onclick="updateRowByUniqueId()">
+            <i class="fa fa-edit"></i> 根据值修改行
+        </a>
+        <a class="btn btn-info" onclick="getSelections()">
+            <i class="fa fa-search"></i> 查询选择数据
+        </a>
+        <a class="btn btn-info" onclick="getRowByUniqueId()">
+            <i class="fa fa-search"></i> 根据值查询行
+        </a>
+        <a class="btn btn-primary" onclick="getData()">
+            <i class="fa fa-search"></i> 查询所有数据
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
         </div>
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         
         $(function() {
@@ -173,6 +173,7 @@
         	var data = $("#" + table.options.id).bootstrapTable('getSelections');
         	alert(JSON.stringify(data))
         }
-    </script>
+
+</script>
 </body>
 </html>

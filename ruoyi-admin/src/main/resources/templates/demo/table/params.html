@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('自定义查询参数')" />
+    <th:block th:include="include :: header('自定义查询参数')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-		<div class="row">
-			<div class="col-sm-12 select-table table-striped">
-				<p class="select-title">通过queryParams方法设置</p>
-				<table id="bootstrap-table"></table>
-			</div>
-			
-			<div class="col-sm-12 search-collapse">
-				<form id="post-form">
-					<div class="select-list">
-						<ul>
-							<li>
-								用户姓名：<input type="text" name="userName" value="测试6"/>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-			<div class="col-sm-12 select-table table-striped">
-				<p class="select-title">通过form自动填充</p>
-				<table id="bootstrap-table-form"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 select-table table-striped">
+            <p class="select-title">通过queryParams方法设置</p>
+            <table id="bootstrap-table"></table>
+        </div>
+
+        <div class="col-sm-12 search-collapse">
+            <form id="post-form">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            用户姓名：<input type="text" name="userName" value="测试6"/>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <p class="select-title">通过form自动填充</p>
+            <table id="bootstrap-table-form"></table>
+        </div>
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -153,6 +153,7 @@
             };
             $.table.init(options);
         });
-    </script>
+
+</script>
 </body>
 </html>

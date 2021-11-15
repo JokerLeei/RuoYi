@@ -1,39 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('导出选择列')" />
+    <th:block th:include="include :: header('导出选择列')"/>
 </head>
 <body class="gray-bg">
-     <div class="container-div">
-		<div class="row">
-		    <div class="col-sm-12 search-collapse">
-				<form id="export-form">
-					<div class="select-list">
-						<ul>
-							<li>
-								用户姓名：<input type="text" name="userName" value=""/>
-							</li>
-							<li>
-								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
-								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
-							</li>
-						</ul>
-					</div>
-				</form>
-			</div>
-			<div class="btn-group-sm" id="toolbar" role="group">
-		        <i class="fa fa-info-circle" style="color: red;"></i>  勾选数据导出指定列，否则为全部   
-		        <a class="btn btn-warning" onclick="exportSelected()">
-		            <i class="fa fa-download"></i> 导出
-		        </a>
-            </div>
-			<div class="col-sm-12 select-table table-striped">
-				<table id="bootstrap-table"></table>
-			</div>
-		</div>
-	</div>
-    <div th:include="include :: footer"></div>
-    <script th:inline="javascript">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="export-form">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            用户姓名：<input type="text" name="userName" value=""/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i
+                                    class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i
+                                    class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="btn-group-sm" id="toolbar" role="group">
+            <i class="fa fa-info-circle" style="color: red;"></i> 勾选数据导出指定列，否则为全部
+            <a class="btn btn-warning" onclick="exportSelected()">
+                <i class="fa fa-download"></i> 导出
+            </a>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<div th:include="include :: footer"></div>
+<script th:inline="javascript">
         var prefix = ctx + "demo/table";
         var datas = [[${@dict.getType('sys_normal_disable')}]];
 
@@ -115,6 +117,7 @@
                 });
         	});
         }
-    </script>
+
+</script>
 </body>
 </html>
